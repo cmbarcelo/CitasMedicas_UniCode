@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CitasMedicas_UniCode.Models.ModelCustom.MedicalAppointments>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Consultory.ConsultoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Doctor.NameDoctor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Patient.CURP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Process.ProcessName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Treatment.TreatmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Consultory.ConsultoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doctor.NameDoctor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient.CURP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Process.ProcessName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Treatment.TreatmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdMedicalAppointments }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdMedicalAppointments }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdMedicalAppointments })
+        </td>
+    </tr>
+}
+
+</table>

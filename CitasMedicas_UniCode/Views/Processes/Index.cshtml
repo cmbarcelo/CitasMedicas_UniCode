@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CitasMedicas_UniCode.Models.ModelCustom.Process>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Treatment.TreatmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProcessName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Treatment.TreatmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProcessName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdProcess }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdProcess }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdProcess })
+        </td>
+    </tr>
+}
+
+</table>

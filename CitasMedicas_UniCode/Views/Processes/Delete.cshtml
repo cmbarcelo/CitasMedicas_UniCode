@@ -1,0 +1,48 @@
+﻿@model CitasMedicas_UniCode.Models.ModelCustom.Process
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Process</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Treatment.TreatmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Treatment.TreatmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcessName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProcessName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
